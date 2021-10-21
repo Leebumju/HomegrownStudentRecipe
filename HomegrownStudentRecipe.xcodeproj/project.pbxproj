@@ -17,6 +17,7 @@
 		D843D6942719001A0077B384 /* HomegrownStudentRecipeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D843D6932719001A0077B384 /* HomegrownStudentRecipeTests.swift */; };
 		D843D69F2719001A0077B384 /* HomegrownStudentRecipeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D843D69E2719001A0077B384 /* HomegrownStudentRecipeUITests.swift */; };
 		D843D6B0271F95DE0077B384 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D843D6AF271F95DE0077B384 /* DetailViewController.swift */; };
+		D8C037E927213C7C001D5C17 /* RecipeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8C037E827213C7C001D5C17 /* RecipeViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +54,7 @@
 		D843D69E2719001A0077B384 /* HomegrownStudentRecipeUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomegrownStudentRecipeUITests.swift; sourceTree = "<group>"; };
 		D843D6A02719001A0077B384 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D843D6AF271F95DE0077B384 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		D8C037E827213C7C001D5C17 /* RecipeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -104,6 +106,7 @@
 			isa = PBXGroup;
 			children = (
 				D843D6AF271F95DE0077B384 /* DetailViewController.swift */,
+				D8C037E827213C7C001D5C17 /* RecipeViewController.swift */,
 				D843D679271900190077B384 /* AppDelegate.swift */,
 				D843D67B271900190077B384 /* SceneDelegate.swift */,
 				D843D67D271900190077B384 /* ViewController.swift */,
@@ -266,6 +269,7 @@
 			files = (
 				D843D684271900190077B384 /* HomegrownStudentRecipe.xcdatamodeld in Sources */,
 				D843D67E271900190077B384 /* ViewController.swift in Sources */,
+				D8C037E927213C7C001D5C17 /* RecipeViewController.swift in Sources */,
 				D843D6B0271F95DE0077B384 /* DetailViewController.swift in Sources */,
 				D843D67A271900190077B384 /* AppDelegate.swift in Sources */,
 				D843D67C271900190077B384 /* SceneDelegate.swift in Sources */,

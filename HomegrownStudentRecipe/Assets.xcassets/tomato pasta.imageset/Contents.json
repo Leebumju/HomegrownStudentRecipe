@@ -1,11 +1,11 @@
 {
   "images" : [
     {
-      "filename" : "tomato pasta.jpeg",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
+      "filename" : "tomato pasta.jpeg",
       "idiom" : "universal",
       "scale" : "2x"
     },

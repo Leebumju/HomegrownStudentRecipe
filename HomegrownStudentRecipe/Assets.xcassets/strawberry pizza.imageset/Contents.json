@@ -1,11 +1,11 @@
 {
   "images" : [
     {
-      "filename" : "strawberry pizza.jpeg",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
+      "filename" : "strawberry pizza.jpeg",
       "idiom" : "universal",
       "scale" : "2x"
     },

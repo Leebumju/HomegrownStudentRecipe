@@ -10,11 +10,20 @@ import UIKit
 class DetailViewController: UIViewController, UITableViewDataSource, UITableViewDelegate{
     var foodName: String? //
   
-    let foodList = ["chicken","pasta","pizza"] 
+    //let foodList = ["chicken","pasta","pizza"]
     let chickenList = ["chicken curry","chicken salad"]
     let pastaList = ["cream pasta", "tomato pasta"]
     let pizzaList = ["shrimp pizza", "strawberry pizza"]
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "showRecipe"{
+            let vc = segue.destination as? RecipeViewController
+            if let index = sender as?Int{
+                vc?.name = chickenList[index] 
+            }
+        }
+    }
+
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if(foodName == "chicken"){
             return chickenList.count
@@ -63,23 +72,17 @@ class DetailViewController: UIViewController, UITableViewDataSource, UITableView
         }
     }
     
-
-   
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        performSegue(withIdentifier: "showRecipe", sender: indexPath.row)
+    }
+    
     
     
     
     @IBAction func close(_ sender:Any){
         dismiss(animated: true, completion: nil)
     }
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
+  
 
 }
 
