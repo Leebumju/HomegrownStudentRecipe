@@ -10,6 +10,18 @@ import UIKit
 class ViewController: UIViewController, UITableViewDataSource, UITableViewDelegate { //UIViewController, UITableViewDataSource, UITableViewDelegate is a protocol
     
     let foodList = ["chicken","pasta","pizza"]
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        //give data to detailViewController
+        if segue.identifier == "showDetail"{
+            let vc = segue.destination as? DetailViewController
+            
+            if let index = sender as? Int{
+                vc?.foodName = foodList[index]
+            }
+        }
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
@@ -37,11 +49,12 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     //UITableViewDelegate
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath){
         print("-->\(indexPath.row)")
+        performSegue(withIdentifier: "showDetail", sender: indexPath.row)
     }
 }
 
 
-//custom cell
+//custom cell 
 class ListCell: UITableViewCell{
     @IBOutlet weak var imgView: UIImageView!
     @IBOutlet weak var foodLabel: UILabel!
