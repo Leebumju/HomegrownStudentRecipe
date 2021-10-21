@@ -13,6 +13,9 @@ class RecipeViewController: UIViewController {
     @IBOutlet weak var recipeName: UILabel!
     //@IBOutlet weak var etc: UILabel!
     
+    let chickenList = ["chicken curry","chicken salad"]
+    let pastaList = ["cream pasta", "tomato pasta"]
+    let pizzaList = ["shrimp pizza", "strawberry pizza"]
     var name: String?
     
     override func viewDidLoad() {

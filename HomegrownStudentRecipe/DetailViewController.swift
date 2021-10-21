@@ -19,7 +19,13 @@ class DetailViewController: UIViewController, UITableViewDataSource, UITableView
         if segue.identifier == "showRecipe"{
             let vc = segue.destination as? RecipeViewController
             if let index = sender as?Int{
-                vc?.name = chickenList[index] 
+                if(foodName=="chicken"){
+                    vc?.name = chickenList[index]
+                }else if(foodName=="pizza"){
+                    vc?.name = pizzaList[index]
+                }else{
+                    vc?.name = pastaList[index]
+                }
             }
         }
     }
