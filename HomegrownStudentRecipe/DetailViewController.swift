@@ -10,10 +10,10 @@ import UIKit
 class DetailViewController: UIViewController, UITableViewDataSource, UITableViewDelegate{
     var foodName: String? //
   
-    let foodList = ["chicken","pasta","pizza"] //
-    let chickenList = ["chicken rice","chicken spicy"]
-    let pastaList = ["cream pasta", "tamata pasta"]
-    let pizzaList = ["bulgogi pizza", "hawai pizza","spicy pizza"]
+    let foodList = ["chicken","pasta","pizza"] 
+    let chickenList = ["chicken curry","chicken salad"]
+    let pastaList = ["cream pasta", "tomato pasta"]
+    let pizzaList = ["shrimp pizza", "strawberry pizza"]
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if(foodName == "chicken"){
@@ -43,17 +43,20 @@ class DetailViewController: UIViewController, UITableViewDataSource, UITableView
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if let foodCell = tableView.dequeueReusableCell(withIdentifier: "foodCell",for: indexPath) as? ChickenListCell {
             if(foodName=="chicken"){
-                let img = UIImage(named:"\(foodList[indexPath.row]).jpeg")
+                let img=UIImage(named:"\(chickenList[indexPath.row]).jpeg")
                 foodCell.chickenImgView.image = img
-                foodCell.chickenFoodLabel.text = foodList[indexPath.row]
+                foodCell.chickenFoodLabel.text = chickenList[indexPath.row]
                 return foodCell
             }else if(foodName == "pasta"){
-                let img = UIImage(named:"\(foodList[indexPath.row]).jpeg")
+                let img = UIImage(named:"\(pastaList[indexPath.row]).jpeg")
                 foodCell.chickenImgView.image = img
-                foodCell.chickenFoodLabel.text = foodList[indexPath.row]
+                foodCell.chickenFoodLabel.text = pastaList[indexPath.row]
                 return foodCell
             }else{
-                return UITableViewCell()
+                let img = UIImage(named:"\(pizzaList[indexPath.row]).jpeg")
+                foodCell.chickenImgView.image = img
+                foodCell.chickenFoodLabel.text = pizzaList[indexPath.row]
+                return foodCell
             }
         }else{
             return UITableViewCell()
