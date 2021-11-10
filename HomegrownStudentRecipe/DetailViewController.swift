@@ -11,7 +11,7 @@ class DetailViewController: UIViewController, UITableViewDataSource, UITableView
     var foodName: String? //
   
     //let foodList = ["chicken","pasta","pizza"]
-    let chickenList = ["chicken curry","chicken salad"]
+    let chickenList = ["치킨 커리","치킨 샐러드"]
     let pastaList = ["cream pasta", "tomato pasta"]
     let pizzaList = ["shrimp pizza", "strawberry pizza"]
     
@@ -19,9 +19,9 @@ class DetailViewController: UIViewController, UITableViewDataSource, UITableView
         if segue.identifier == "showRecipe"{
             let vc = segue.destination as? RecipeViewController
             if let index = sender as?Int{
-                if(foodName=="chicken"){
+                if(foodName=="치킨"){
                     vc?.name = chickenList[index]
-                }else if(foodName=="pizza"){
+                }else if(foodName=="피자"){
                     vc?.name = pizzaList[index]
                 }else{
                     vc?.name = pastaList[index]
@@ -31,9 +31,9 @@ class DetailViewController: UIViewController, UITableViewDataSource, UITableView
     }
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        if(foodName == "chicken"){
+        if(foodName == "치킨"){
             return chickenList.count
-        }else if(foodName == "pasta"){
+        }else if(foodName == "파스타"){
             return pastaList.count
         }else{
             return pizzaList.count
@@ -57,12 +57,12 @@ class DetailViewController: UIViewController, UITableViewDataSource, UITableView
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if let foodCell = tableView.dequeueReusableCell(withIdentifier: "foodCell",for: indexPath) as? ChickenListCell {
-            if(foodName=="chicken"){
+            if(foodName=="치킨"){
                 let img=UIImage(named:"\(chickenList[indexPath.row]).jpeg")
                 foodCell.chickenImgView.image = img
                 foodCell.chickenFoodLabel.text = chickenList[indexPath.row]
                 return foodCell
-            }else if(foodName == "pasta"){
+            }else if(foodName == "파스타"){
                 let img = UIImage(named:"\(pastaList[indexPath.row]).jpeg")
                 foodCell.chickenImgView.image = img
                 foodCell.chickenFoodLabel.text = pastaList[indexPath.row]

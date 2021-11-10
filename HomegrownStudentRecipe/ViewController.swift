@@ -9,7 +9,7 @@ import UIKit
 
 class ViewController: UIViewController, UITableViewDataSource, UITableViewDelegate { //UIViewController, UITableViewDataSource, UITableViewDelegate is a protocol
     
-    let foodList = ["chicken","pasta","pizza"]
+    let foodList = ["치킨","파스타","피자"]
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         //give data to detailViewController
