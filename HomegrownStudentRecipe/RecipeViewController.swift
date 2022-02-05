@@ -14,7 +14,6 @@ class RecipeViewController: UIViewController {
     @IBOutlet weak var material1: UILabel!
     @IBOutlet weak var recipe: UILabel!
     
-    
     let chickenList = ["치킨 커리","치킨 샐러드"]
     let pastaList = ["크림 파스타", "토마토 파스타"]
     let pizzaList = ["새우 피자", "딸기 피자"]
@@ -39,6 +38,9 @@ class RecipeViewController: UIViewController {
             } else if name == "크림 파스타" {
                 material1.text = "bulgogi source 1 spoon \nwhipping source 4spoon \nsour cream 3spoon"
                 material1.numberOfLines = 3
+            } else {
+                material1.text = "준비 예정입니다!"
+                recipe.text = "준비 예정입니다!"
             }
         }
     }

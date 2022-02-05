@@ -7,11 +7,11 @@
 
 import UIKit
 
-class DetailViewController: UIViewController, UITableViewDataSource, UITableViewDelegate{
-    var foodName: String? //
-  
-    //let foodList = ["chicken","pasta","pizza"]
-    let chickenList = ["치킨 커리","치킨 샐러드"]
+class DetailViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
+    
+    var foodName: String?
+    
+    let chickenList = ["치킨 커리", "치킨 샐러드"]
     let pastaList = ["크림 파스타", "토마토 파스타"]
     let pizzaList = ["새우 피자", "딸기 피자"]
     
@@ -72,7 +72,7 @@ class DetailViewController: UIViewController, UITableViewDataSource, UITableView
                 foodCell.chickenFoodLabel.text = pizzaList[indexPath.row]
                 return foodCell
             }
-        }else{
+        } else {
             return UITableViewCell()
         }
     }
@@ -92,3 +92,4 @@ class ChickenListCell: UITableViewCell {
     @IBOutlet weak var chickenImgView: UIImageView!
     @IBOutlet weak var chickenFoodLabel: UILabel!
 }
+
