@@ -16,7 +16,6 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         //give data to detailViewController
         if segue.identifier == "showDetail" {
             let vc = segue.destination as? DetailViewController
-            
             if let index = sender as? Int {
                 vc?.foodName = foodList[index]
             }

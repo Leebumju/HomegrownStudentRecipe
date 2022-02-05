@@ -12,18 +12,18 @@ class DetailViewController: UIViewController, UITableViewDataSource, UITableView
   
     //let foodList = ["chicken","pasta","pizza"]
     let chickenList = ["치킨 커리","치킨 샐러드"]
-    let pastaList = ["cream pasta", "tomato pasta"]
-    let pizzaList = ["shrimp pizza", "strawberry pizza"]
+    let pastaList = ["크림 파스타", "토마토 파스타"]
+    let pizzaList = ["새우 피자", "딸기 피자"]
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "showRecipe" {
             let vc = segue.destination as? RecipeViewController
             if let index = sender as?Int {
-                if foodName=="치킨" {
+                if foodName == "치킨" {
                     vc?.name = chickenList[index]
-                } else if foodName=="피자" {
+                } else if foodName == "피자" {
                     vc?.name = pizzaList[index]
-                } else {
+                } else if foodName == "파스타" {
                     vc?.name = pastaList[index]
                 }
             }
@@ -56,7 +56,7 @@ class DetailViewController: UIViewController, UITableViewDataSource, UITableView
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if let foodCell = tableView.dequeueReusableCell(withIdentifier: "foodCell",for: indexPath) as? ChickenListCell {
-            if foodName=="치킨" {
+            if foodName == "치킨" {
                 let img=UIImage(named:"\(chickenList[indexPath.row]).jpeg")
                 foodCell.chickenImgView.image = img
                 foodCell.chickenFoodLabel.text = chickenList[indexPath.row]
