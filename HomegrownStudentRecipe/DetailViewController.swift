@@ -16,14 +16,14 @@ class DetailViewController: UIViewController, UITableViewDataSource, UITableView
     let pizzaList = ["shrimp pizza", "strawberry pizza"]
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "showRecipe"{
+        if segue.identifier == "showRecipe" {
             let vc = segue.destination as? RecipeViewController
-            if let index = sender as?Int{
-                if(foodName=="치킨"){
+            if let index = sender as?Int {
+                if foodName=="치킨" {
                     vc?.name = chickenList[index]
-                }else if(foodName=="피자"){
+                } else if foodName=="피자" {
                     vc?.name = pizzaList[index]
-                }else{
+                } else {
                     vc?.name = pastaList[index]
                 }
             }
@@ -31,11 +31,11 @@ class DetailViewController: UIViewController, UITableViewDataSource, UITableView
     }
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        if(foodName == "치킨"){
+        if foodName == "치킨" {
             return chickenList.count
-        }else if(foodName == "파스타"){
+        } else if foodName == "파스타" {
             return pastaList.count
-        }else{
+        } else {
             return pizzaList.count
         }
     }
@@ -48,26 +48,25 @@ class DetailViewController: UIViewController, UITableViewDataSource, UITableView
         // Do any additional setup after loading the view.
     }
     
-
     func updateUI() {
-        if let foodName = self.foodName{
-                foodLabel.text = foodName
+        if let foodName = self.foodName {
+            foodLabel.text = foodName
         }
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if let foodCell = tableView.dequeueReusableCell(withIdentifier: "foodCell",for: indexPath) as? ChickenListCell {
-            if(foodName=="치킨"){
+            if foodName=="치킨" {
                 let img=UIImage(named:"\(chickenList[indexPath.row]).jpeg")
                 foodCell.chickenImgView.image = img
                 foodCell.chickenFoodLabel.text = chickenList[indexPath.row]
                 return foodCell
-            }else if(foodName == "파스타"){
+            } else if foodName == "파스타" {
                 let img = UIImage(named:"\(pastaList[indexPath.row]).jpeg")
                 foodCell.chickenImgView.image = img
                 foodCell.chickenFoodLabel.text = pastaList[indexPath.row]
                 return foodCell
-            }else{
+            } else {
                 let img = UIImage(named:"\(pizzaList[indexPath.row]).jpeg")
                 foodCell.chickenImgView.image = img
                 foodCell.chickenFoodLabel.text = pizzaList[indexPath.row]
@@ -82,9 +81,6 @@ class DetailViewController: UIViewController, UITableViewDataSource, UITableView
         performSegue(withIdentifier: "showRecipe", sender: indexPath.row)
     }
     
-    
-    
-    
     @IBAction func close(_ sender:Any){
         dismiss(animated: true, completion: nil)
     }
@@ -92,7 +88,7 @@ class DetailViewController: UIViewController, UITableViewDataSource, UITableView
 
 }
 
-class ChickenListCell: UITableViewCell{
+class ChickenListCell: UITableViewCell {
     @IBOutlet weak var chickenImgView: UIImageView!
     @IBOutlet weak var chickenFoodLabel: UILabel!
 }
